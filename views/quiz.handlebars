@@ -10,9 +10,9 @@
     {{#if error_msg}}
         <div class="h4 alert alert-danger text-center">{{ error_msg }}</div>
     {{/if}}
-    <h1 class="display-4 text-center">QUIZ {{ day }}</h1>
+    <h1 class="display-4 text-center">QUIZ {{ currentDay }}</h1>
     <p class="lead text-center">NOTE: Minimum 60% score is required to unlock the next course</p>
-    <form  id="myForm" action="/users/userhome/ignite/week{{currentWeek}}/day{{currentDay}}/quiz" method="post">
+    <form  id="myForm" action="/users/userhome/ignite/week{{ currentWeek }}/day{{ currentDay }}/quiz{{ currentQuiz }}" method="post">
         {{#each quiz_data }}
             <h1 class="display">{{ this.id }}. {{ this.question }}</h1></br>
             <div class="container">

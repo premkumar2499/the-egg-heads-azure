@@ -9,6 +9,10 @@ const config = require('../config/database');
 mongoose.connect(config.database, { useNewUrlParser: true, useUnifiedTopology: true });
 let db = mongoose.connection;
 
+router.all('/admin/*',function (req, res, next) {
+    req.app.locals.layout = 'layout'; // set User layout here
+});
+
 //routes to admin_login.handlebars page
 router.get('/login', function (req, res) {
     res.render('admin_login');
